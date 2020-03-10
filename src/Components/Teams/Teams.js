@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import {Link} from "@material-ui/core";
@@ -7,12 +8,12 @@ import './HomeStyle.css';
 import logoQuiz2 from '../images/logoQuiz2.png';
 import { useHistory } from 'react-router-dom'
 
-export const Home = () => {
-    const history = useHistory();
+export const Teams = () => {
+    let history = useHistory();
 
    const Submit = (e) => {
         e.preventDefault();
-        history.push('/Teams');
+        history.push('/Levels');
     } 
     return <> 
         <Link href="/Teams">Jols</Link>
