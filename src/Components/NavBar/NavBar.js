@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -17,6 +18,7 @@ const useStyles = makeStyles(theme => ({
 export default function DenseAppBar() {
   const classes = useStyles();
 
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -24,7 +26,7 @@ export default function DenseAppBar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           </IconButton>
           <Typography variant="h6" color="inherit">
-            Hello>
+            Sobre Womabot
           </Typography>
         </Toolbar>
       </AppBar>

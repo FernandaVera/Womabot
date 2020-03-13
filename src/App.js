@@ -1,23 +1,16 @@
 import React from 'react';
 import './App.css';
-import {Home} from './Components/Home/Home';
-import Teams from './Components/Teams/Teams';
+import {LogIn} from '././Components/LogIn/LogIn'
+import Navbar from './Components/Navbar/Navbar'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import DenseAppBar from './Components/NavBar/NavBar';
-
 
 function App() {
   return (
     <BrowserRouter>
-    <DenseAppBar></DenseAppBar>
+    <Navbar/>
     <Switch>
     <Route path="/">
-      <Home/>
-      </Route>
-    </Switch>
-    <Switch>
-    <Route path="/Teams">
-      <Teams/>
+      <LogIn/>
       </Route>
     </Switch>
   </BrowserRouter>
