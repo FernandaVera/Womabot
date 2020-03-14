@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import {LogIn} from '././Components/LogIn/LogIn'
-import Navbar from './Components/Navbar/Navbar'
+import Appbar from './Components/Navbar/Navbar'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
+class App extends Component {
+  render (){ 
+    return(  
+    <>
     <BrowserRouter>
-    <Navbar/>
+    <Appbar/>
+
     <Switch>
     <Route path="/">
       <LogIn/>
       </Route>
     </Switch>
   </BrowserRouter>
+  </>
   );
-}
-
+};
+};
 export default App;
