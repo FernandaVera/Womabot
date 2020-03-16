@@ -20,13 +20,15 @@ export const LogIn = () => {
 
                 // history.push('/About') (poner donde vas a pushear)
     return <> 
-        <Grid className="container-menu" container direction="column" justify="space-between" alignItems="center">
-            <img src={WBlogo} alt="logo" width="400px"></img>
+        <div className="container-menu">
+        <Grid container direction="column" justify="space-between" alignItems="center">
+            <img src={WBlogo} alt="logo" width="500px"></img>
+            <br/>
             <TextField id="outlined-basic" label="Ingresa tu nombre" onChange={(e) => setUser(e.target.value)} variant="outlined"/>
             <br/>
             <TextField id="outlined-basic" label="Ingresa tu contraseña" onChange={(e) => setPassword(e.target.value)} variant="outlined"/>
             <br/>
-            <Button variant="outlined" color="primary" 
+            <Button className="boton-entrar" variant="outlined" color="primary" 
         onClick={() => {if(username === userInput && password === passwordInput){
             console.log("Login exitoso");
              }else{
@@ -34,6 +36,7 @@ export const LogIn = () => {
     }}}>Entrar</Button>
             
         </Grid>
+        </div>
     
         </>
 };
