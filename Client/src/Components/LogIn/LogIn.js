@@ -22,6 +22,7 @@ export const LogIn = () => {
     return <> 
         <div className="container-menu">
         <Grid container direction="column" justify="space-between" alignItems="center">
+            <br/>
             <img src={WBlogo} alt="logo" width="500px"></img>
             <br/>
             <TextField id="outlined-basic" label="Ingresa tu nombre" onChange={(e) => setUser(e.target.value)} variant="outlined"/>
