@@ -5,20 +5,19 @@ import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
 import WBlogo from '../images/WBlogo.png';
 import {  GlobalContext } from './GlobalContextProvider';
-//import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export const LogIn = () => {
     const {username, password} = React.useContext(GlobalContext);
     const [userInput, setUser] = React.useState("");
     const [passwordInput, setPassword] = React.useState("");
-//     const history = useHistory();
 
-//    const Submit = (e) => {
-//         e.preventDefault();
-//         history.push('/Disclaimer');
+   const history = useHistory();
 
+    // const Submit = (e) => {
+    // e.preventDefault();
+    // history.push('/Disclaimer')
 
-                // history.push('/About') (poner donde vas a pushear)
     return <> 
         <div className="container-menu">
         <Grid container direction="column" justify="space-between" alignItems="center">
@@ -31,7 +30,7 @@ export const LogIn = () => {
             <br/>
             <Button className="boton-entrar" variant="outlined" color="primary" 
         onClick={() => {if(username === userInput && password === passwordInput){
-            console.log("Login exitoso");
+            history.push('/Disclaimer');
              }else{
             console.log("Acceso denegado");
     }}}>Entrar</Button>
