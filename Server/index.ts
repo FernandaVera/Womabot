@@ -1,14 +1,16 @@
-const express = require('express');
-const mysql = require("mysql");
+import express, { Application } from "express";
+import entryPoint from "./app";
+import mysql from "mysql";
 
-const app = express();
+const app: Application = express();
+app.use(entryPoint);
 app.use(express.json());
 
-const connection = mysql.createConnection({
+export const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'comunicacion3',
-    database: 'cinema',
+    database: 'chatbot',
     multipleStatementes: true,
     port: '3306'
 });
@@ -21,7 +23,7 @@ connection.connect(err => {
     console.log("Connected to db")
 });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 9001;
 app.listen(port, () => {
     console.log(`Listening on port ${port}...`);
 });
