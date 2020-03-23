@@ -8,6 +8,7 @@ import Footer from './Components/Footer/Footer'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 
+
 class App extends Component {
   render (){ 
     return(  
