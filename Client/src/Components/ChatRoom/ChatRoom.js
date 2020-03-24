@@ -11,47 +11,57 @@ const Message = props => props.data.map(message => <p>{message.question}</p>);
 const conversation = [];
 const [data, setData] = useState(conversation);
 
-const MessageQueueRenderer = ({ messageQueue }) => (
-  <>
-      {
-          messageQueue.map((message) =>
-              < h5 >{message} </h5>
-          )
-      }
-  </>
-);
+// const MessageQueueRenderer = ({ messageQueue }) => (
+//   <>
+//       {
+//           messageQueue.map((message) =>
+//               < h5 >{message} </h5>
+//           )
+//       }
+//   </>
+// );
 const handleClick = () => {
 
   const question = document.getElementById("messageinput").value.toUpperCase();
   
     var keyword;
-    if (question.includes("HOLA")){
-      keyword = "HOLA"
-    } else if (question.includes("CAUSA")){
-      keyword = "CAUSA"
-    } else if (question.includes("SINTOMAS")){
-      keyword = "SINTOMAS"
-    } else if (question.includes("PREVENCION")){
-      keyword = "PREVENCION"
-    } else if (question.includes("AUTOEXPLORACION")){
-      keyword = "AUTOEXPLORACION"
-    } else if (question.includes("MASTOGRAFIA")){
-      keyword = "MASTOGRAFIA"
-    } else if (question.includes("TRATAMIENTO")){
-      keyword = "TRATAMIENTO"
-    } else {
-      keyword = "ERROR"
-    }
+    switch(true) {
+      case question.includes('HOLA'):
+        keyword = 'HOLA'
+          break
+        case question.includes('CAUSA'):
+        keyword = 'CAUSA'
+          break
+        case question.includes('SINTOMAS'):
+        keyword = 'SINTOMAS'
+          break
+        case question.includes('PREVENCION'):
+        keyword = 'PREVENCION'
+          break
+        case question.includes('AUTOEXPLORACION'):
+        keyword = 'AUTOEXPLORACION'
+          break
+        case question.includes('MASTOGRAFIA'):
+        keyword = 'MASTOGRAFIA'
+            break
+        case question.includes('TRATAMIENTO'):
+        keyword = 'TRATAMIENTO'
+            break
+        default:
+          keyword = "error"
+    };
     
     axios.get("http://localhost:9001/questions/find/" + keyword)
-    .then
-    (function(response)
+    .then(function(response){console.log(response.data[0].answer)}) // guardarlo en un state que me lo guarde en un div
+    .catch(function(err){console.log(err)})
+    // .then
+    // (function(response)
 
-    { this.setState({conversation:response.data.answer})
-      (response.data[0].answer)
+    // { this.setState({conversation:response.data.answer})
+    //   (response.data[0].answer)
     
-    }) 
-    .catch(function(err){(err)})
+    // }) 
+    // .catch(function(err){(err)})
   
   };
 
@@ -61,7 +71,7 @@ const handleClick = () => {
       <div className="chat-room">
         <div className="sendMess">
 
-      <Message onClick={MessageQueueRenderer} data={data} />
+      <Message data={data} />
         <TextField id="messageinput" type="text" placeholder="Escribe tu pregunta aquí" variant="outlined" />
           <Button variant="contained" onClick={() => handleClick()}> Enviar </Button>
       
