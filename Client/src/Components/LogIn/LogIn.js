@@ -6,11 +6,11 @@ import { Grid } from '@material-ui/core';
 import WBlogo from '../images/WBlogo.png';
 import {  GlobalContext } from './GlobalContextProvider';
 import { useHistory } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 
 export const LogIn = () => {
     const {username, password} = React.useContext(GlobalContext);
     const [userInput, setUser] = React.useState("");
-    const [passwordInput, setPassword] = React.useState("");
 
    const history = useHistory();
 
@@ -26,15 +26,7 @@ export const LogIn = () => {
             <br/>
             <TextField id="outlined-basic" label="Ingresa tu nombre" onChange={(e) => setUser(e.target.value)} variant="outlined"/>
             <br/>
-            <TextField id="outlined-basic" label="Ingresa tu contraseña" onChange={(e) => setPassword(e.target.value)} variant="outlined"/>
-            <br/>
-            <Button className="boton-entrar" variant="outlined" color="primary" 
-        onClick={() => {if(username === userInput && password === passwordInput){
-            history.push('/Disclaimer');
-             }else{
-            console.log("Acceso denegado");
-    }}}>Entrar</Button>
-            
+            <Button variant="contained"><Link href="/Disclaimer"> Entrar </Link></Button>
         </Grid>
         </div>
     

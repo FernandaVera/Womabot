@@ -1,20 +1,28 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import produce from 'immer';
 import axios from 'axios';
 
 import './ChatStyle.css';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
-// Chat
 export const ChatRoom = () => {
-const Message = props => props.data.map(message => <div>{message.question}</div>);
+const Message = props => props.data.map(message => <p>{message.question}</p>);
 const conversation = [];
 const [data, setData] = useState(conversation);
-  const handleClick = () => {
-    const question = document.querySelector('#messageinput').value.toUpperCase();
+
+const MessageQueueRenderer = ({ messageQueue }) => (
+  <>
+      {
+          messageQueue.map((message) =>
+              < h5 >{message} </h5>
+          )
+      }
+  </>
+);
+const handleClick = () => {
+
+  const question = document.getElementById("messageinput").value.toUpperCase();
   
     var keyword;
     if (question.includes("HOLA")){
@@ -34,14 +42,16 @@ const [data, setData] = useState(conversation);
     } else {
       keyword = "ERROR"
     }
-    //todos los casos
-    //agregarle caso "en caso de que no (general)"
-
-    //ARREGLAR TODO ESTE COCHINERO
-
+    
     axios.get("http://localhost:9001/questions/find/" + keyword)
-    .then(function(response){console.log(response.data[0].answer)}) // guardarlo en un state que me lo guarde en un div
-    .catch(function(err){console.log(err)})
+    .then
+    (function(response)
+
+    { this.setState({conversation:response.data.answer})
+      (response.data[0].answer)
+    
+    }) 
+    .catch(function(err){(err)})
   
   };
 
@@ -51,8 +61,8 @@ const [data, setData] = useState(conversation);
       <div className="chat-room">
         <div className="sendMess">
 
-      <Message data={data} />
-        <TextField id="messageinput" type="text" placeholder="Escribe aquí" variant="outlined" />
+      <Message onClick={MessageQueueRenderer} data={data} />
+        <TextField id="messageinput" type="text" placeholder="Escribe tu pregunta aquí" variant="outlined" />
           <Button variant="contained" onClick={() => handleClick()}> Enviar </Button>
       
         </div>

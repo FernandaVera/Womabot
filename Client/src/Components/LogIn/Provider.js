@@ -6,8 +6,8 @@ class Provider extends Component {
 render() {
   return (
     <Fragment>
-      <GlobalContextProvider settings={{ username: "fer", password: "123" }}>
-        <Login />
+      <GlobalContextProvider settings={{ username: "fernanda"}}>
+        <Login/>
       </GlobalContextProvider>
     </Fragment>
   );

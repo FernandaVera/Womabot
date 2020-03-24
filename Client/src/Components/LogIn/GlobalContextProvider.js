@@ -1,8 +1,7 @@
 import React from 'react'
 
 export const GlobalContext = React.createContext({
-    username: null,
-    password: null
+    username: null
 });
 
 export const GlobalContextProvider = ({children,settings}) => {
