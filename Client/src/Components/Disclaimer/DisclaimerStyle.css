@@ -1,7 +1,7 @@
 
 
 .main-container{
-    background-image: url('../images/fondoWomabot.png');
+    background-image: url('../images/WBBGIM.png');
     width: 100vw;
     height: 100vh;
 }
@@ -9,7 +9,7 @@
 .classTitle{
     text-align: center;
     color:white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'sans-serif';
 }
 
 .botonChat{
@@ -18,12 +18,11 @@
 }
 
 .card-dis{
-    width: 600px;
-    height: 20px;
+    width: 40%;
+    height: 40%;
     padding: 1em 1em;
     font-size: 1em;
     color: rgb(109, 28, 48);
-    background-color: rgb(226, 218, 220);
-    box-shadow: 10px 10px 5px 0px rgba(117,22,65,0.56);
+    background-color: rgb(255, 255, 255);
     border-radius: 9px 9px 9px 9px;
 }

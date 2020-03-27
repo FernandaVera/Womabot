@@ -6,16 +6,12 @@ import "./ChatStyle.css";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Grid from '@material-ui/core/Grid';
 export const ChatRoom = () => {
-  // const Message = props => {<p>{props.message}</p>};
-  // const Message = props => {<p>{props}</p>};
-  // const [conversation,setConversation] = useState("");
-  // useEffect(() => {Message(conversation)},[conversation])
-
   const MessageQueueRenderer = ({ messageQueue }) => (
     <>
       {messageQueue.map(question => (
-        <h5>{question} </h5>
+        <h5 className="styleMess">{question}</h5>
       ))}
     </>
   );
@@ -46,6 +42,15 @@ export const ChatRoom = () => {
       case userinput.toUpperCase().includes("TRATAMIENTO"):
         keyword = "TRATAMIENTO";
         break;
+      case userinput.toUpperCase().includes("HELLO"):
+        keyword = "HELLO";
+        break;
+      case userinput.toUpperCase().includes("SYMTOMS"):
+        keyword = "SYNTOMS";
+        break;
+       case userinput.toUpperCase().includes("CAUSES"):
+        keyword = "CAUSES";
+        break;
       default:
         keyword = "error";
     }
@@ -74,7 +79,8 @@ export const ChatRoom = () => {
       <body className="main-chat">
         <div className="chat-room">
           <div className="sendMess">
-            <MessageQueueRenderer messageQueue={conversation} />
+          <MessageQueueRenderer messageQueue={conversation} />
+            <Grid container direction="row">
             <TextField
               id="messageinput"
               value={userinput}
@@ -82,11 +88,12 @@ export const ChatRoom = () => {
               type="text"
               placeholder="Escribe tu pregunta aquí"
               variant="outlined"
-            />
-            <Button variant="contained" onClick={() => handleClick()}>
+            /> 
+            <Button variant="contained" color ="secondary" onClick={() => handleClick()}>
               {" "}
               Preguntar{" "}
             </Button>
+            </Grid>
           </div>
         </div>
       </body>
