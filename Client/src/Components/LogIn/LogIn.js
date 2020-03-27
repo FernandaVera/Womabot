@@ -15,7 +15,7 @@ export const LogIn = () => {
             <img src={WBlogo} alt="logo" width="500px"></img>
             <br/>
             <TextField id="outlined-basic" label="Your name / Tu nombre" variant="outlined"/>
-            <p className="idiom">Selecciona tu idioma / Choose your language</p>
+            <p className="idiom"> Choose your language / Selecciona tu idioma</p>
         </Grid>
         <Grid container direction="row" justify="center" alignItems="center" className="ButtonLogin">
         <Button variant="contained"  color ="secondary"> <Link href="/Disclaimer"> English </Link></Button>

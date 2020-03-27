@@ -11,8 +11,7 @@ export default function DisclaimerEsp() {
       <Grid container direction="column" justify="flex-start" alignItems="center">
         <h1 className={"classTitle"}> ¡Hola Fernanda!</h1>
         <div className="card-dis">
-        <p>Womabot es chatbot programado para r
-          esolver tus dudas acerca del cáncer de mama.Los contenidos de este chatbot se han redactado solo con fines informativos. 
+        <p>Womabot es chatbot programado para resolver tus dudas acerca del cáncer de mama.Los contenidos de este chatbot se han redactado solo con fines informativos. 
           En ningún momento pueden servir para facilitar diagnósticos o 
           sustituir la labor de un profesional.
           Recuerda que tu salud es primordial y debes hacerte chequeos temporalmente.</p>
