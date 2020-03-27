@@ -18,7 +18,7 @@ export default function DisclaimerEsp() {
           Recuerda que tu salud es primordial y debes hacerte chequeos temporalmente.</p>
         </div>
         <br/>
-        <Button variant="contained" color ="secondary"><Link href="/Chat"> ¡Entendido! </Link></Button>         
+        <Button variant="contained" color = "secondary"><Link href="/Chat"> ¡Entendido! </Link></Button>         
     </Grid>
     </div>
   );
